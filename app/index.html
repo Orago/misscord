@@ -1,0 +1,148 @@
+<title>MissCord</title>
+    <link rel="stylesheet" href="/misscord.css">
+
+  <body> 
+    <div class="misscordApp"> 
+      <div class="server"> 
+        <div class="serverIcon"> 
+          <span><i class="fa fa-home fa-2x"></i></span> 
+        </div> 
+        <div class="server--seperator"></div>
+        <div class="tooltip">
+          <div class="serverIcon active" style="content:url(https://cdn.discordapp.com/embed/avatars/0.png);"></div>
+          <span class="tooltiptext">Server name</span>
+        </div>
+        <div class="serverIcon"> 
+          <span>Miss</span>
+        </div>
+        <div class="serverIcon"> 
+          <span>Miss</span>
+        </div>
+        <div class="serverIcon"> 
+          <span>Miss</span>
+        </div>
+        <div class="server--seperator"></div>
+        <div class="serverIcon"> 
+          <span>Miss</span>
+        </div> 
+      </div> 
+      <div class="chatOuter"> 
+        <div class="channels"> 
+          <nav> 
+            <h3>Server Name</h3> 
+            <span>\/</span> 
+          </nav> 
+          <div class="channels--list"> 
+            <div class="channels--list-item"> 
+              <div class="channels--list-header"> 
+                <h4>
+                  <span>\/</span>
+                  Voice Channels
+                </h4> 
+                <span>Plus</span> 
+              </div> 
+              <div class="channels--list-content"> 
+                <div class="channels--list-content-item"> 
+                  <span>&gt;</span> 
+                  <h5>General</h5> 
+                </div> 
+                <div class="channels--list-content-item"> 
+                  <span>&gt;</span> 
+                  <h5>General</h5> 
+                </div> 
+                <div class="channels--list-content-item"> 
+                  <span>&gt;</span> 
+                  <h5>General</h5> 
+                </div> 
+                <div class="channels--list-content-item"> 
+                  <span>&gt;</span> 
+                  <h5>General</h5> 
+                </div> 
+              </div> 
+            </div> 
+          </div> 
+          <div class="channels--userArea"> 
+            <div class="name"> 
+              <span class="userIcon">a</span> 
+              <div class="title"> 
+                <h4 class="username">Orago</h4>
+                <span class="tag subText">#5057</span> 
+              </div> </div> <div class="icons"> 
+            <span>i</span> 
+            <span>i</span> 
+            <span>i</span> 
+            </div> </div> 
+        </div> 
+        <div class="chat"> 
+          <nav> 
+            <div class="header"> 
+              <span>#</span> 
+              <h2>general<h2> 
+                </h2>
+              </h2>
+            </div> 
+            <div class="icons"> icons </div> 
+          </nav> 
+          <div class="chat--inner"> 
+            <div class="messages"> 
+              <ul id="messages" class="messages--received" style="overflow:auto;height:70%;  -ms-overflow-style: none;
+  scrollbar-width: none;"> 
+                
+              </ul> 
+              <div class="messages--send"> 
+                <input type="text" id="input" placeholder="Message here"> 
+                <!--<button onclick="sendMessage();" class="simple-btn">Send</button>-->
+              </div> 
+            </div> 
+            <div class="members"> Users:<ul class="memberList"></ul></div> 
+          </div> 
+        </div> 
+      </div> 
+    </div> 
+  </body>
+
+
+<span id="modal" class="simple-modal simple-animate-opacity">
+  <div class="simple-modal-content" style="padding:32px">
+    <div class="simple-container simple-white">
+      <i onclick="document.getElementById('modal').style.display='none'" id="modal-close" class="fa fa-remove simple-xlarge simple-button simple-transparent simple-right simple-xlarge"></i>
+      <span id="modal-inside">Null</span>
+    </div>
+  </div>
+</span>
+
+<html>
+<div id="chat_all">
+<script src="/socket.io/socket.io.js"></script>
+<script src="/main.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  <link href="https://beta.meown.tk/css/simple-extra.css" rel="stylesheet" >
+  
+  <link href="https://beta.meown.tk/simple.css" rel="stylesheet" >
+<!--<button class="simple-open-button" onclick="openForm()">Chat</button>-->
+
+<div class="simple-chat" id="chat">
+  <div class="simple-form-container">
+    <h1>Chat</h1>
+	<ul id="messagdes" style="overflow:auto;height:150px;"></ul>
+    <label for="msg"><b>Message</b></label>
+    <ul class="room-list"></ul>
+    <input id="innput" placeholder="Say something...">
+    <button onclick="sendMessage();" class="simple-btn">Send</button>
+    <!--<button type="button" class="simple-btn simple-cancel" onclick="closeForm()">Close</button>-->
+  </div>
+</div>
+<script>
+var values = {}
+var chat = document.getElementById("chat");
+function openForm() {chat.style.display = "block";chat.setAttribute("opened", true); }
+function closeForm() {chat.style.display = "none";chat.setAttribute("opened", false);}
+</script>
+</div>
+</html>
